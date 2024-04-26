@@ -1,0 +1,50 @@
+nav {
+  background-image: url("../../../assets/themes/theme-main.jpg");
+  background-position: center;
+  
+}
+main {
+  padding-top: 30px;
+  // background: linear-gradient(to top right, rgba(40, 37, 37, 0.8), rgba(255, 215, 0, 0.7));
+  #carousel {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    #img-container {
+      display: flex;
+      overflow: hidden;
+      gap: 10px;
+    }
+  }
+  #car-header {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 45px;
+  }
+  h1,
+  h2 {
+    margin: 0;
+  }
+  form.flex {
+    justify-content: center;
+    text-align: center;
+    div.flex {
+      gap: 10px;
+    }
+  }
+}
+
+:host ::ng-deep {
+  p-carousel {
+    p-image {
+      height: 300px;
+      img {
+        width: 100%;
+        aspect-ratio: 3/2;
+      }
+    }
+  }
+  .p-tabview {
+    margin-inline: 45px;
+  }
+}

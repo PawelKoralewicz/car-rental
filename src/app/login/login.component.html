@@ -1,0 +1,41 @@
+<div class="login">
+  <div class="nav">
+    <app-navigation></app-navigation>
+  </div>
+  <form (ngSubmit)="loginSubmit()" [formGroup]="form">
+    <span class="p-input-icon-right p-float-label">
+      <i class="pi pi-at"></i>
+      <input
+        type="text"
+        pInputText
+        id="email"
+        [formControl]="form.controls.identifier"
+        required
+      />
+      <label for="email">E-mail</label>
+    </span>
+    <span class="p-float-label">
+      <p-password
+        [toggleMask]="true"
+        [formControl]="form.controls.password"
+        [feedback]="false"
+        required
+      ></p-password>
+      <label for="password">Password</label>
+    </span>
+    <p-checkbox
+      [(ngModel)]="remember"
+      inputId="remember"
+      label="Remember me"
+      [binary]="true"
+      [ngModelOptions]="{ standalone: true }"
+    ></p-checkbox>
+    <p-button
+      label="Login"
+      styleClass="p-button-rounded p-button-success p-button-raised"
+      type="submit"
+      [loading]="loading"
+    ></p-button>
+    <p>Don't have an account? <a routerLink="/registration">Register now</a></p>
+  </form>
+</div>

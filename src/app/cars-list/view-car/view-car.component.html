@@ -1,0 +1,135 @@
+<nav>
+  <app-navigation></app-navigation>
+</nav>
+<main>
+  <p-carousel
+    [value]="carImages"
+    [numVisible]="3"
+    [numScroll]="1"
+    [circular]="true"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-img pTemplate="item">
+      <p-image [src]="img.url" alt="image" [preview]="false"></p-image>
+    </ng-template>
+  </p-carousel>
+  <!-- <div id="carousel">
+    <p-button icon="pi pi-arrow-left" styleClass="p-button-rounded p-button-text p-button-info"></p-button>
+    <div id="img-container">
+        <p-image *ngFor="let img of carImages" [src]="img.url" alt="image" [preview]="true"></p-image>
+    </div>
+    <p-button icon="pi pi-arrow-right" styleClass="p-button-rounded p-button-text p-button-info"></p-button>
+  </div> -->
+  <div id="car-header" *ngFor="let car of carData">
+    <div id="name">
+      <h1>{{ car.brand }}</h1>
+      <h2>{{ car.model }}</h2>
+    </div>
+    <h1>{{ car.price }} zl/24h</h1>
+  </div>
+  <p-tabView>
+    <p-tabPanel header="Details">
+      <!-- <table>
+                <tr>
+                    <th>cos</th>
+                    <td>cos2</td>
+                </tr>
+            </table> -->
+      <p-table [value]="carData">
+        <ng-template pTemplate="body" let-car>
+          <tr>
+            <td><b>capacity</b></td>
+            <td>{{ car.capacity }} dm<sup>3</sup></td>
+          </tr>
+          <tr>
+            <td><b>doors</b></td>
+            <td>{{ car.doors }}</td>
+          </tr>
+          <tr>
+            <td><b>drive</b></td>
+            <td>{{ car.drive }}</td>
+          </tr>
+          <tr>
+            <td><b>fuel</b></td>
+            <td>{{ car.fuel }}</td>
+          </tr>
+          <tr>
+            <td><b>year</b></td>
+            <td>{{ car.year }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-tabPanel>
+    <p-tabPanel header="Description">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sunt
+        consequuntur? Praesentium soluta neque iusto odio optio nemo nihil
+        omnis, in tempore dolores quos aperiam nobis aut, obcaecati sed
+        consectetur blanditiis veritatis! Quidem tempora nesciunt, aliquam
+        perferendis porro, repellendus quibusdam doloribus eligendi ipsam sint
+        maxime tenetur aut officia ab? Perspiciatis sunt assumenda rerum.
+        Aspernatur commodi asperiores minus tenetur similique fuga consequatur
+        nihil saepe quasi molestias vero vel magnam rerum velit, corrupti ab
+        pariatur suscipit iste, soluta dolor eveniet consequuntur. Aspernatur
+        excepturi explicabo recusandae ab quaerat delectus est numquam officia?
+        Quibusdam, fuga. Laudantium vitae reprehenderit, eos quae consequuntur
+        amet et, debitis nobis impedit alias magnam quibusdam cum expedita unde
+        rem fuga sed quis earum similique tempora! Debitis recusandae veniam
+        ipsa quo suscipit qui nisi, molestiae iste provident magni deserunt
+        quaerat officiis fuga repellat, ducimus vel deleniti perspiciatis
+        incidunt? Dignissimos similique corrupti aut a quo repellat maxime quas
+        in vel! Nostrum ducimus asperiores iure natus? Quos animi modi rerum cum
+        iste repudiandae excepturi commodi asperiores! Id quis culpa provident
+        eius placeat minus ducimus dolorem illo? Aliquam laudantium animi in sit
+        soluta nemo iste ad, natus tempora velit reiciendis omnis! Corporis
+        perspiciatis exercitationem illum similique quo. Totam, illum.
+        Repudiandae quos ut illum earum nemo vitae veritatis nam veniam omnis
+        perspiciatis voluptatibus autem doloribus cum at, inventore fuga eos,
+        saepe ea enim adipisci odio vel fugiat sunt. Magni nostrum nisi quae
+        enim quos illum maiores quod architecto totam animi, perspiciatis saepe
+        eum dicta tempora nemo commodi deserunt! Et esse repudiandae quae
+        exercitationem a numquam porro eligendi dolores ipsam aspernatur
+        pariatur voluptatem laborum quaerat omnis obcaecati non excepturi
+        molestias voluptatibus libero perferendis, cumque suscipit doloremque,
+        alias dolorem. Perferendis id inventore aliquid fuga debitis labore
+        beatae quas natus autem asperiores animi illum, laborum libero cum at
+        dignissimos officiis nostrum distinctio blanditiis nobis velit odit!
+        Beatae, assumenda!
+      </p>
+    </p-tabPanel>
+    <p-tabPanel header="Booking">
+      <form class="flex">
+        <div class="flex flex-column">
+          <div class="flex flex-column">
+            <label htmlFor="date-from">Book from</label>
+            <p-calendar
+              id="date-from"
+              [showIcon]="true"
+              [showButtonBar]="true"
+              dateFormat="dd.mm.yy"
+              [minDate]="fromMinDate"
+              [(ngModel)]="currentDate"
+              [ngModelOptions]="{ standalone: true }"
+              (ngModelChange)="updateMinDate()"
+            ></p-calendar>
+          </div>
+          <div class="flex flex-column">
+            <label htmlFor="date-to">Book to</label>
+            <p-calendar
+              id="date-to"
+              [showIcon]="true"
+              [showButtonBar]="true"
+              dateFormat="dd.mm.yy"
+              [minDate]="toMinDate"
+              [(ngModel)]="toMinDate"
+              [ngModelOptions]="{ standalone: true }"
+            ></p-calendar>
+          </div>
+          <p-button label="Book now" icon="pi pi-bookmark" (click)="confirmBooking()"></p-button>
+        </div>
+      </form>
+    </p-tabPanel>
+  </p-tabView>
+</main>
+<p-toast position="top-center"></p-toast>
+<p-confirmDialog></p-confirmDialog>

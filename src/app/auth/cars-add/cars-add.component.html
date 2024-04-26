@@ -1,0 +1,125 @@
+<!-- <form [formGroup]="form" (ngSubmit)="addNewCar()"> -->
+<form [formGroup]="form" (ngSubmit)="createBrand()">
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-6 xl:col-6">
+      <div class="flex flex-column gap-2 input-area">
+        <span class="p-float-label">
+          <input pInputText id="brand" [formControl]="form.controls.name" required/>
+          <label htmlFor="brand">Brand</label>
+        </span>
+      </div>
+      <div class="flex flex-column gap-2 input-area">
+        <span class="p-float-label">
+          <input pInputText id="model" [formControl]="form.controls.model" required/>
+          <label htmlFor="model">Model</label>
+        </span>
+      </div>
+      <!-- <div class="flex flex-column gap-2 input-area">
+        <span class="p-float-label">
+          <input pInputText id="drive" [formControl]="form.controls.drive" required/>
+          <label htmlFor="drive">Drive</label>
+        </span>
+      </div> -->
+      <label for="drive-type" style="color: #f8f9fe;">Drive type</label>
+      <div class="flex flex-wrap gap-3" id="drive-type" style="color: #f8f9fe; margin-bottom: 10px">
+        <div class="flex align-items-center">
+            <p-radioButton name="drive" value="front" inputId="ingredient1" [formControl]="form.controls.drive"></p-radioButton>
+            <label for="ingredient1" class="ml-2">front</label>
+        </div>
+        
+        <div class="flex align-items-center">
+            <p-radioButton name="drive" value="4x4" inputId="ingredient3" [formControl]="form.controls.drive"></p-radioButton>
+            <label for="ingredient3" class="ml-2">4x4</label>
+        </div>
+
+        <div class="flex align-items-center">
+            <p-radioButton name="drive" value="back" inputId="ingredient2" [formControl]="form.controls.drive"></p-radioButton>
+            <label for="ingredient2" class="ml-2">back</label>
+        </div>   
+    </div>
+      <!-- <div class="flex flex-column gap-2 input-area">
+        <span class="p-float-label">
+          <input pInputText id="fuel" [formControl]="form.controls.fuel" required/>
+          <label htmlFor="fuel">Fuel</label>
+        </span>
+      </div> -->
+      <label for="fuel-type" style="color: #f8f9fe;">Fuel type</label>
+      <div class="flex flex-wrap gap-3" id="fuel-type" style="color: #f8f9fe; margin-bottom: 10px">
+        <div class="flex align-items-center">
+            <p-radioButton name="fuel" value="petrol" inputId="ingredient1" [formControl]="form.controls.fuel"></p-radioButton>
+            <label for="ingredient1" class="ml-2">petrol</label>
+        </div>
+        
+        <div class="flex align-items-center">
+            <p-radioButton name="fuel" value="diesel" inputId="ingredient2" [formControl]="form.controls.fuel"></p-radioButton>
+            <label for="ingredient2" class="ml-2">diesel</label>
+        </div>
+        
+        <div class="flex align-items-center">
+            <p-radioButton name="fuel" value="gas" inputId="ingredient3" [formControl]="form.controls.fuel"></p-radioButton>
+            <label for="ingredient3" class="ml-2">gas</label>
+        </div>
+    </div>
+      <div class="flex flex-column gap-2 input-area" style="color: #f8f9fe">
+        <label htmlFor="fuel">Choose images (at least 4)</label>
+          <input type="file" (change)="getImages($event)" multiple accept=".jpg, .jpeg, .png, .svg" min="4">
+          <small>Hold Ctrl button to choose multiple files</small>
+      </div>
+      <!-- <p-fileUpload name="demo[]" [multiple]="true" accept="image/*" [maxFileSize]="1000000" [showUploadButton]="false" [showCancelButton]="false" chooseLabel="Choose images" [formControl]="form.controls.images" (change)="getImages($event)">
+        </p-fileUpload> -->
+    </div>
+    <div class="col-12 md:col-6 lg:col-6 xl:col-6">
+      <span class="flex flex-column input-area gap-2">
+        <span class="p-float-label">
+          <p-inputNumber id="capacity" [min]="0" [formControl]="form.controls.capacity" [required]="true"></p-inputNumber>
+          <label htmlFor="capacity">Capacity</label>
+        </span>
+      </span>
+      <div class="flex flex-column gap-2 input-area">
+        <span class="p-float-label">
+          <p-inputNumber
+            id="price"
+            mode="currency"
+            currency="PLN"
+            [min]="0"
+            [formControl]="form.controls.price"
+            [required]="true"
+          ></p-inputNumber>
+          <label htmlFor="price">Price per day</label>
+        </span>
+      </div>
+      <div class="flex flex-column input-area gap-2">
+        <span class="p-float-label">
+          <p-inputNumber id="doors" [min]="1"  [max]="7" [formControl]="form.controls.doors" [required]="true"></p-inputNumber>
+          <label htmlFor="doors">Doors</label>
+        </span>
+      </div>
+      <div class="flex flex-column input-area gap-2">
+        <span class="p-float-label">
+          <p-inputNumber
+            id="year"
+            [min]="1910"
+            [max]="2023"
+            mode="decimal"
+            inputId="withoutgrouping"
+            [useGrouping]="false"
+            [formControl]="form.controls.year"
+            [required]="true"
+          ></p-inputNumber>
+          <label htmlFor="year">Year</label>
+        </span>
+      </div>
+      <div class="flex flex-column input-area gap-2">
+        <span class="p-float-label">
+          <p-inputNumber id="seats" [min]="1" [formControl]="form.controls.seats" [required]="true"></p-inputNumber>
+          <label htmlFor="seats">Seats</label>
+        </span>
+      </div>
+      <div class="flex flex-column gap-2" id="button-container">
+        <!-- <button icon="pi pi-upload" label="Upload" type="submit" pButton [disabled]="!canPost"></button> -->
+        <button icon="pi pi-upload" label="Upload" type="submit" pButton></button>
+      </div>
+    </div>
+  </div>
+</form>
+<p-toast></p-toast>

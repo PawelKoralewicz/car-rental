@@ -1,0 +1,12 @@
+<nav>
+    <a routerLink=""><img src="../../assets/images/logo.png" alt="firm logo"/></a>
+    <ul>
+      <li *ngIf="hasPermission"><p-button icon="pi pi-plus" styleClass="p-button-rounded" label="Add new car" (click)="addNewCar()"></p-button></li>
+      <a routerLink="/"><li>HOME</li></a>
+      <a routerLink="/cars-list"><li>CARS LIST</li></a>
+      <a routerLink="/about"><li>ABOUT</li></a>
+      <li><p-toggleButton onLabel="ENG" offLabel="PL" (onChange)="changeLanguage($event)"></p-toggleButton></li>
+      <li *ngIf="!hasPermission"><p-button label="Login" routerLink="/login"></p-button></li>
+      <li *ngIf="hasPermission"><p-button label="Sign Out" icon="pi pi-sign-out" iconPos="right" styleClass="p-button-rounded p-button-danger" (click)="logOut()"></p-button></li>
+    </ul>
+  </nav>

@@ -1,0 +1,86 @@
+main {
+  background-image: url("../../assets/images/home-background.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  #join {
+    // background-image: url('../../assets/images/morpheus.png');
+    height: calc(100% - 48px);
+    text-align: center;
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
+    // background-position: center;
+    background-size: contain;
+    // position: absolute;
+    // top: 0;
+    position: relative;
+    display: flex;
+    // justify-content: center;
+    flex-direction: column;
+    // flex-direction: column;
+.title {
+    clip-path: polygon(0% 55%, 0% 62%, 0% 69%, 0% 77%, 1% 80%, 2% 83%, 6% 94%, 7% 94%, 15% 100%, 16% 100%, 23% 99%, 31% 99%, 32% 99%, 40% 96%, 57% 100%, 60% 100%, 79% 99%, 80% 99%, 90% 94%, 92% 95%, 95% 93%, 98% 88%, 100% 82%, 98% 74%, 95% 68%, 90% 55%, 96% 50%, 98% 45%, 98% 39%, 98% 30%, 98% 27%, 93% 19%, 92% 12%, 97% 8%, 95% 3%, 93% 2%, 82% 3%, 74% 2%, 68% 4%, 67% 6%, 60% 0%, 55% 0%, 46% 2%, 46% 2%, 38% 6%, 37% 4%, 31% 3%, 28% 3%, 23% 4%, 16% 3%, 14% 5%, 12% 8%, 6% 13%, 5% 13%, 2% 16%, 0% 20%, 2% 23%, 2% 29%, 2% 29%, 2% 31%, 0% 42%, 0% 43%, 1% 46%, 2% 50%);
+    background-color: rgba(25, 25, 25, 0.8);
+    z-index: 3;
+    h3 {
+      margin: 0;
+      z-index: 3;
+      font-size: 2em;
+      color: #00FF41;
+      padding-top: 30px;
+    //   color: #F8F9FE;
+    }
+    h4 {
+        z-index: 3;
+        color: #F8F9FE;
+        b {
+            color: red;
+            font-weight: 900;
+            font-size: 1.4em;
+        }
+    }
+}
+    #container {
+        position: absolute;
+        bottom: 0;
+        left: 20%;
+        // width: 100vw;
+        #choose {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            img {
+                height: 100%;
+                max-width: 100%;
+            //   position: absolute;
+            //   bottom: 0;
+              // transform: translateX(-50%);
+              // transform: translateY(10%);
+              // max-height: 400px;
+            }
+            #join {
+                position: absolute;
+                height: 47.2px;
+                // bottom: 0;
+                left: 2%;
+                top: 73%;
+                // transform: translate(10%, 80%);
+                // top: 50%;
+            }
+            #waste {
+                position: absolute;
+                top: 73%;
+                right: 0;
+            }
+        }
+    }
+  }
+}
+// :host ::ng-deep {
+//     #join .p-button {
+//         top: 70%;
+//     }
+
+// }

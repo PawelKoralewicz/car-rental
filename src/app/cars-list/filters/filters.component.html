@@ -1,0 +1,46 @@
+<section>
+    <div id="filters-header">
+        <h1>Filters</h1>
+    </div>
+        <form [formGroup]="form" (submit)="filterCars()">
+            <div class="flex flex-column">
+                <label htmlFor="brands">Brands</label>
+                <p-multiSelect id="brands" [options]="cars" [formControl]="form.controls.brand" optionLabel="brand" optionValue="brand" display="chip"></p-multiSelect>
+            </div>
+            <div class="flex flex-column">
+                <label htmlFor="models">Models</label>
+                <p-multiSelect id="models" [options]="models" [formControl]="form.controls.model" optionLabel="model" optionValue="model" display="chip"></p-multiSelect>
+            </div>
+            <div class="flex flex-column">
+                <label htmlFor="drive">Drive type</label>
+                <p-multiSelect id="drive" [options]="driveTypes" [formControl]="form.controls.drive" optionLabel="drive" optionValue="drive" display="chip"></p-multiSelect>
+            </div>
+            <div class="flex flex-column">
+                <label htmlFor="doors">Doors number</label>
+                <p-multiSelect id="doors" [options]="doorsNum" [formControl]="form.controls.doors" optionLabel="doors" optionValue="doors" display="chip"></p-multiSelect>
+            </div>
+            <div class="flex flex-column">
+                <label htmlFor="capacity">Capacity</label>
+                <p-multiSelect id="capacity" [options]="capacities" [formControl]="form.controls.capacity" optionLabel="capacity" optionValue="capacity" display="chip"></p-multiSelect>
+            </div>
+            <div class="flex flex-column">
+                <label htmlFor="fuel">Fuel type</label>
+                <p-multiSelect id="fuel" [options]="fuelTypes" [formControl]="form.controls.fuel" optionLabel="fuel" optionValue="fuel" display="chip"></p-multiSelect>
+            </div>
+            <div class="flex flex-column">
+                <label htmlFor="years">Production year</label>
+                <p-multiSelect id="years" [options]="years" [formControl]="form.controls.year" optionLabel="year" optionValue="year" display="chip"></p-multiSelect>
+            </div>
+            <div id="ranges">
+                <div class="flex flex-column">
+                    <label htmlFor="price-min">Min price</label>
+                    <p-inputNumber id="price-min" [formControl]="form.controls.priceMin"></p-inputNumber>
+                </div>
+                <div class="flex flex-column">
+                    <label htmlFor="price-max">Max price</label>
+                    <p-inputNumber id="price-max" [formControl]="form.controls.priceMax"></p-inputNumber>
+                </div>
+            </div>
+            <button pButton label="Search" type="submit"></button>
+        </form>
+</section>

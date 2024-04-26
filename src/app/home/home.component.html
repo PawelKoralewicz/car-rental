@@ -1,0 +1,20 @@
+<main>
+    <app-navigation></app-navigation>
+    <div id="join">
+        <span class="title" *ngIf="!isLogged">
+            <h3>Fastest and highest quality cars to rent quickly!</h3>
+            <h4>Don't waste time and <b>JOIN US</b> NOW!</h4>
+        </span>
+        <span class="title" *ngIf="isLogged">
+            <h3>Welcome back! Ready for new adventure?</h3>
+            <h4>Don't waste time and <button pButton label="Rent a car" class="p-button-success p-button-rounded" routerLink="cars-list"></button><b> NOW!</b></h4>
+        </span>
+        <div id="container" *ngIf="!isLogged">
+            <div id="choose">
+                <a href="registration"><p-button label="JOIN NOW" styleClass="p-button-rounded p-button-danger" id="join"></p-button></a>
+                <a href="http://www.mzk.koszalin.pl"><p-button label="WASTE TIME" styleClass="p-button-rounded p-button-info" id="waste"></p-button></a>
+                <img src="../../assets/images/morpheus.png" alt="choose">
+            </div>
+        </div>
+</div>
+</main>

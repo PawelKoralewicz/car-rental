@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="nav">
+    <app-navigation></app-navigation>
+  </div>
+    <section>
+      <aside>
+        <app-filters (filters)="getFilters($event)"></app-filters>
+      </aside>
+      <article>
+        <div class="gridcontainer">
+          <div class="grid">
+            <div *ngIf="carsList.length === 0" style="color: #f8f9fe; font-weight: 600; font-size: 2rem; padding: 30px">No results found</div>
+            <div class="col-12 md:col-6 lg:col-3" *ngFor="let car of carsList">
+              <p-card [routerLink]="['/view-car', car.id]">
+                <ng-template pTemplate="header">
+                  <img [src]="car.images" alt="Car's photo" />
+                </ng-template>
+                <ng-template pTemplate="body" class="short-car-info">
+                  <ul>
+                    <li>{{ car.brand }}</li>
+                    <li>{{ car.model }}</li>
+                  </ul>
+                  <ul>
+                    <li>{{ car.year }}</li>
+                    <li>{{ car.price }} zł / 24h</li>
+                  </ul>
+                </ng-template>
+              </p-card>
+            </div>
+          </div>
+        </div>
+        <p-paginator></p-paginator>
+      </article>
+    </section>
+</div>

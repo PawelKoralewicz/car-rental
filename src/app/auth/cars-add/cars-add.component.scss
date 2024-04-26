@@ -1,0 +1,48 @@
+form {
+  overflow: hidden;
+  padding-top: 5px;
+  .input-area {
+    margin-block: 10px;
+    input:focus {
+      + label {
+        margin: 0;
+        color: #f8f9fe;
+      }
+      box-shadow: none;
+    }
+    input:valid {
+      + label {
+        margin: 0;
+        color: #f8f9fe;
+      }
+    }
+    input::file-selector-button {
+      padding: 10px;
+      border-radius: 13px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  #button-container {
+    text-align: center;
+  }
+}
+
+:host ::ng-deep {
+  .p-float-label:has(.p-inputnumber-input:focus) {
+    label {
+      margin: 0;
+      color: #f8f9fe;
+    }
+  }
+  .p-inputnumber-input:focus {
+    box-shadow: none;
+  }
+  .p-float-label:has(.p-inputnumber-input:valid) {
+    label {
+      margin: 0;
+      color: #f8f9fe;
+    }
+  }
+}

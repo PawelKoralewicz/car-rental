@@ -1,0 +1,40 @@
+<div class="main">
+  <div class="nav">
+    <app-navigation></app-navigation>
+  </div>
+  <form (ngSubmit)="submitRegistration()" [formGroup]="form">
+    <span class="p-input-icon-right p-float-label">
+      <i class="pi pi-user"></i>
+      <input
+        type="text"
+        pInputText
+        id="username"
+        [formControl]="form.controls.username"
+      />
+      <label for="username">Username</label>
+    </span>
+    <span class="p-input-icon-right p-float-label">
+      <i class="pi pi-at"></i>
+      <input
+        type="text"
+        pInputText
+        id="email"
+        [formControl]="form.controls.email"
+      />
+      <label for="email">E-mail</label>
+    </span>
+    <span class="p-float-label">
+      <p-password
+        [toggleMask]="true"
+        [formControl]="form.controls.password"
+      ></p-password>
+      <label for="password">Password</label>
+    </span>
+    <p-button
+      label="Register"
+      styleClass="p-button-rounded p-button-success p-button-raised"
+      type="submit"
+    ></p-button>
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+  </form>
+</div>
