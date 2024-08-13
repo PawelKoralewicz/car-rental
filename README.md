@@ -1,6 +1,28 @@
 # CarsFront
 
-## Dodanie danych do bazy (Strapi)
+## [EN]
+This project was created using Angular 15 for the frontend layer and Strapi for the backend.
+It is a web-based system for car rental listings.
+
+The system offers the following features:
+* Logging in and registration
+* Adding listings
+* Browsing available listings
+* Filtering listings
+* Booking cars
+
+## [PL]
+Ten projekt został stworzony przy użyciu Angular 15 do wykonania warstwy frontend oraz Strapi - backend.  
+Jest to system webowy z ogłoszeniami samochodów na wynajem.  
+
+ System umożlwia:
+ * Logowanie i rejestrację
+ * Dodawanie ogłoszeń
+ * Przeglądanie dostępnych ogłoszeń
+ * Filtrowanie ogłoszeń
+ * Rezerwację samochodów
+
+## [EN] Adding data to database | [PL] Dodanie danych do bazy (Strapi)
 cd car-rental
 npm run strapi import -- -f my-strapi-export.tar.gz.enc
 key: 123
