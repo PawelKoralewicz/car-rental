@@ -41,6 +41,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ### Home page  
 ![Image 1: Home page](https://github.com/user-attachments/assets/ee96e68c-8688-463e-98d4-7ae869b81894)  
 *Image 1: Home page.*  
+  
+From the homepage, an unregistered user has access only to the "About Us", login, and registration pages. The first two are accessible through the navigation menu, while the registration page can be accessed by clicking the "Join Us" button, which is located on the hand of Morpheus from the Matrix film series.  
 
 ### Login and registration  
 ![Image 2: Registration page](https://github.com/user-attachments/assets/94b4790e-fa6f-4a13-9cc8-abac2bd5b825)  
@@ -48,6 +50,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ![Image 3: Login page](https://github.com/user-attachments/assets/c3760ef7-ec37-4c70-8831-ca52a9e2240d)
 *Image 3: Login page.*  
+  
+In the *images 2 and 3*, the login and registration pages are displayed. Users can switch between them using the hyperlink located beneath the forms. During registration, verification checks whether a user with the given email address or username already exists. Logging in is possible by entering either an email or username along with a password, and there is a "remember me" option that prevents the user from being logged out after the session ends.  
 
 ### Cars view  
 ![Image 4: Cars list view](https://github.com/user-attachments/assets/d64820ef-576b-4a8c-a1a1-58a155d5342b)  
@@ -58,8 +62,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ![Image 6: New car listing form](https://github.com/user-attachments/assets/9e13186e-48d8-4f87-8a59-3a719d35e459)  
 *Image 6: New car listing form*  
-
-
+  
+Upon logging in, users gain access to the functions for viewing the list of available car rental ads, filtering them, and adding new ads. Image 4 shows the listing view along with the filter section. Image 5 displays the details of an ad, which the user is directed to after selecting a vehicle of interest. The final image, number 6, shows the form for adding ads, which users can access by clicking the "+ Add New Car" button in the navigation menu.  
 
 ## Code scaffolding
 
